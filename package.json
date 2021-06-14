@@ -1,0 +1,20 @@
+{
+  "name": "messenger-backend",
+  "version": "1.0.0",
+  "description": "This is messenger backend, do not touch it",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rookasrudzianskas/Messenger-MERN_Backend-PART.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rookasrudzianskas/Messenger-MERN_Backend-PART/issues"
+  },
+  "homepage": "https://github.com/rookasrudzianskas/Messenger-MERN_Backend-PART#readme"
+}
