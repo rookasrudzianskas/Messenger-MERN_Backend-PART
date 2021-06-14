@@ -5,7 +5,8 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/rookasrudzianskas/Messenger-MERN_Backend-PART/issues"
   },
-  "homepage": "https://github.com/rookasrudzianskas/Messenger-MERN_Backend-PART#readme"
+  "homepage": "https://github.com/rookasrudzianskas/Messenger-MERN_Backend-PART#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.13",
+    "pusher": "^5.0.0"
+  }
 }
