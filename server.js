@@ -34,6 +34,14 @@ mongoose.connect(mongoURI, {
 
 mongoose.connection.once('open', () => {
     console.log('DB is connected');
+
+    // then something changes here, this will know about it!
+    const changeStream = mongoose.connection.collection("messages").watch();
+    changeStream.on("change", (change) => {
+        pusher.trigger('messages', 'newMessages', {
+           'change': change,
+        });
+    })
 })
 
 // api routes
