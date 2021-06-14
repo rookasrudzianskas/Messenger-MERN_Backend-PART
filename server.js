@@ -43,5 +43,15 @@ app.post('/save/message', (req, res) => {
     });
 })
 
+app.get('/retrieve/conversation', (req, res) => {
+    mongoMessages.find((err, data) => {
+        if(err) {
+            res.status(500).send(err);
+        } else {
+            res.status(200).send(data);
+        }
+    })
+})
+
 // listen
 app.listen(port, () => console.log(`listening on ${port}`));
