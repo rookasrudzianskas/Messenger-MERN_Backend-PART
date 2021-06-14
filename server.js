@@ -11,6 +11,14 @@ import mongoMessages from "./messageModal.js";
 const app = express();
 const port = process.env.PORT || 8000;
 
+const pusher = new Pusher({
+    appId: "1219149",
+    key: "a06555855a0276a2e1a5",
+    secret: "46e7641f0b07cd52a647",
+    cluster: "eu",
+    useTLS: true
+});
+
 // middlewares
 app.use(express.json());
 app.use(cors());
