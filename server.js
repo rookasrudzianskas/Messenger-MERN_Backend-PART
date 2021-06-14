@@ -48,6 +48,10 @@ app.get('/retrieve/conversation', (req, res) => {
         if(err) {
             res.status(500).send(err);
         } else {
+            data.sort((b, a) => {
+                return a.timestamp - b.timestamp;
+            });
+
             res.status(200).send(data);
         }
     })
