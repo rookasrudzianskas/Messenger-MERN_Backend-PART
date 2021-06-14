@@ -4,12 +4,16 @@ import Pusher from "pusher";
 import mongoose from "mongoose";
 import cors from "cors";
 
+import mongoMessages from "./messageModal.js";
+
+
 // app config
 const app = express();
 const port = process.env.PORT || 8000;
 
 // middlewares
-
+app.use(express.json());
+app.use(cors());
 
 // db config
 
@@ -27,6 +31,17 @@ mongoose.connection.once('open', () => {
 // api routes
 app.get('/', (req, res) => res.status(200).send("Hello World 🚀"));
 
+app.post('/save/message', (req, res) => {
+    const dbMessage = req.body;
+
+    mongoMessages.create(dbMessage, (err, data) => {
+        if(err) {
+            res.status(500).send(err);
+        } else {
+            res.status(201).send(data);
+        }
+    });
+})
 
 // listen
 app.listen(port, () => console.log(`listening on ${port}`));
